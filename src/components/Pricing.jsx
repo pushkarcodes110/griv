@@ -1,6 +1,6 @@
 import { CheckCircle2 } from 'lucide-react';
 
-export default function Pricing() {
+export default function Pricing({ onOpenModal }) {
     const plans = [
         {
             name: 'Strategy Session',
@@ -37,8 +37,8 @@ export default function Pricing() {
                     <div
                         key={i}
                         className={`relative rounded-[2rem] p-8 md:p-10 flex flex-col gap-8 transition-transform hover:-translate-y-2 ${plan.popular
-                                ? 'bg-text text-background shadow-[0_0_40px_rgba(201,168,76,0.15)] ring-1 ring-accent'
-                                : 'bg-surface border border-slate text-text'
+                            ? 'bg-text text-background shadow-[0_0_40px_rgba(201,168,76,0.15)] ring-1 ring-accent'
+                            : 'bg-surface border border-slate text-text'
                             }`}
                     >
                         {plan.popular && (
@@ -67,10 +67,12 @@ export default function Pricing() {
                             ))}
                         </ul>
 
-                        <button className={`magnetic-btn mt-4 w-full py-4 rounded-full font-bold text-sm ${plan.popular
+                        <button
+                            onClick={onOpenModal}
+                            className={`magnetic-btn mt-4 w-full py-4 rounded-full font-bold text-sm ${plan.popular
                                 ? 'bg-accent text-background'
                                 : 'bg-background border border-slate hover:border-accent text-text'
-                            }`}>
+                                }`}>
                             <div className={`btn-bg-layer absolute inset-0 rounded-full ${plan.popular ? 'bg-background' : 'bg-surface'}`} />
                             <span className={`relative z-10 ${plan.popular ? 'mix-blend-difference text-text' : ''}`}>
                                 {plan.popular ? 'Start Build' : 'Inquire'}

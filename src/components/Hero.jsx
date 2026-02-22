@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ArrowRight } from 'lucide-react';
 
-export default function Hero() {
+export default function Hero({ onOpenModal }) {
     const container = useRef(null);
 
     useEffect(() => {
@@ -54,7 +54,7 @@ export default function Hero() {
                 </p>
 
                 <div className="hero-el mt-8 flex flex-col sm:flex-row gap-4">
-                    <button className="magnetic-btn bg-accent text-background px-8 py-4 rounded-full text-sm font-bold flex items-center gap-2 group">
+                    <button onClick={onOpenModal} className="magnetic-btn bg-accent text-background px-8 py-4 rounded-full text-sm font-bold flex items-center gap-2 group">
                         <div className="btn-bg-layer bg-text !text-background absolute inset-0 rounded-full" />
                         <span className="relative z-10 flex items-center gap-2">
                             Book a Free AI Growth Audit

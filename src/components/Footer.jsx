@@ -1,3 +1,6 @@
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+
 export default function Footer() {
     return (
         <footer className="w-full bg-background pt-24 md:pt-32 pb-8 px-6 relative z-10">
@@ -22,22 +25,22 @@ export default function Footer() {
                     <div className="md:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8">
                         <div className="flex flex-col gap-4">
                             <h4 className="font-sans font-semibold text-text uppercase text-xs tracking-wider">Navigation</h4>
-                            <a href="#systems" className="text-sm font-sans text-textMuted hover:text-accent transition-colors">Systems</a>
-                            <a href="#process" className="text-sm font-sans text-textMuted hover:text-accent transition-colors">Process</a>
-                            <a href="#protocol" className="text-sm font-sans text-textMuted hover:text-accent transition-colors">Protocol</a>
+                            <HashLink smooth to="/#systems" className="text-sm font-sans text-textMuted hover:text-accent transition-colors">Systems</HashLink>
+                            <HashLink smooth to="/#process" className="text-sm font-sans text-textMuted hover:text-accent transition-colors">Process</HashLink>
+                            <HashLink smooth to="/#protocol" className="text-sm font-sans text-textMuted hover:text-accent transition-colors">Protocol</HashLink>
                         </div>
 
                         <div className="flex flex-col gap-4">
                             <h4 className="font-sans font-semibold text-text uppercase text-xs tracking-wider">Socials</h4>
-                            <a href="#" className="text-sm font-sans text-textMuted hover:text-accent transition-colors">Twitter (X)</a>
-                            <a href="#" className="text-sm font-sans text-textMuted hover:text-accent transition-colors">LinkedIn</a>
-                            <a href="#" className="text-sm font-sans text-textMuted hover:text-accent transition-colors">GitHub</a>
+                            <a href="https://x.com/griv" target="_blank" rel="noopener noreferrer" className="text-sm font-sans text-textMuted hover:text-accent transition-colors">Twitter (X)</a>
+                            <a href="https://linkedin.com/company/griv" target="_blank" rel="noopener noreferrer" className="text-sm font-sans text-textMuted hover:text-accent transition-colors">LinkedIn</a>
+                            <a href="https://github.com/griv" target="_blank" rel="noopener noreferrer" className="text-sm font-sans text-textMuted hover:text-accent transition-colors">GitHub</a>
                         </div>
 
                         <div className="flex flex-col gap-4">
                             <h4 className="font-sans font-semibold text-text uppercase text-xs tracking-wider">Legal</h4>
-                            <a href="#" className="text-sm font-sans text-textMuted hover:text-accent transition-colors">Privacy Policy</a>
-                            <a href="#" className="text-sm font-sans text-textMuted hover:text-accent transition-colors">Terms of Service</a>
+                            <Link to="/privacy-policy" className="text-sm font-sans text-textMuted hover:text-accent transition-colors">Privacy Policy</Link>
+                            <Link to="/terms" className="text-sm font-sans text-textMuted hover:text-accent transition-colors">Terms of Service</Link>
                         </div>
                     </div>
                 </div>
