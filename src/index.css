@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-text font-sans antialiased overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+  }
+
+  .text-drama {
+    @apply font-drama italic text-accent;
+  }
+}
+
+/* Base interactive transitions */
+button, a {
+  @apply transition-all duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)];
+}
+
+.magnetic-btn {
+  @apply relative overflow-hidden inline-flex items-center justify-center;
+}
+.magnetic-btn:hover {
+  transform: scale(1.03);
+}
+
+.magnetic-btn .btn-bg-layer {
+  @apply absolute inset-0 bg-accent translate-y-[101%] transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)];
+}
+.magnetic-btn:hover .btn-bg-layer {
+  @apply translate-y-0;
+}
+
+.hover-lift {
+  @apply transition-transform duration-300 ease-out;
+}
+.hover-lift:hover {
+  @apply -translate-y-[1px];
+}
