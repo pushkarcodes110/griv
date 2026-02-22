@@ -22,7 +22,7 @@ export default function LeadFormModal({ isOpen, onClose }) {
         setStatus('submitting');
 
         // User will provide webhook. Replace URL here.
-        const WEBHOOK_URL = 'YOUR_WEBHOOK_URL_HERE'; // <--- Webhook destination
+        const WEBHOOK_URL = 'https://auton8n.pehanoge.com/webhook/a7ca288b-50a1-4e1b-b7a4-c54f5298db0a'; // <--- Webhook destination
 
         try {
             const response = await fetch(WEBHOOK_URL, {
